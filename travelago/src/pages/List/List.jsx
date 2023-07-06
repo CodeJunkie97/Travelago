@@ -1,8 +1,11 @@
 import "./list.css"
+import Navbar from '../../components/Navbar/Navbar'
+import Header from '../../components/Header/Header'
 const List = () => {
     return (
       <div>
-          List
+          <Navbar />
+          <Header />
       </div>
     );
   };
