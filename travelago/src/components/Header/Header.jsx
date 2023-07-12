@@ -20,6 +20,7 @@ import { AuthContext } from "../../context/AuthContext";
 const Header = ({ type }) => {
   const [destination, setDestination] = useState("");
   const [openDate, setOpenDate] = useState(false);
+  const [activeTab, setActiveTab] = useState("stays");
   const [dates, setDates] = useState([
     {
       startDate: new Date(),
@@ -37,7 +38,9 @@ const Header = ({ type }) => {
   const navigate = useNavigate();
   const { user } = useContext(AuthContext);
 
-
+const handleToggle = (tab) =>{
+  setActiveTab(tab);
+}
   const handleOption = (name, operation) => {
     setOptions((prev) => {
       return {
@@ -62,23 +65,23 @@ const Header = ({ type }) => {
         }
       >
         <div className="headerList">
-          <div className="headerListItem active">
+          <div className = {activeTab === "stays" ? "headerListItem active" : "headerListItem"} onClick =  { () => handleToggle("stays")}>
             <FontAwesomeIcon icon={faBed} />
             <span>Stays</span>
           </div>
-          <div className="headerListItem">
+          <div className = {activeTab === "flights" ? "headerListItem active" : "headerListItem"} onClick = {() => handleToggle("flights")}>
             <FontAwesomeIcon icon={faPlane} />
             <span>Flights</span>
           </div>
-          <div className="headerListItem">
+          <div className = {activeTab === "cars" ? "headerListItem active" : "headerListItem"} onClick = {() => handleToggle("cars")}>
             <FontAwesomeIcon icon={faCar} />
             <span>Car rentals</span>
           </div>
-          <div className="headerListItem">
+          <div className = {activeTab === "beds" ? "headerListItem active" : "headerListItem"} onClick = {() =>handleToggle("beds")}>
             <FontAwesomeIcon icon={faBed} />
             <span>Attractions</span>
           </div>
-          <div className="headerListItem">
+          <div className = {activeTab === "taxis" ? "headerListItem active" : "headerListItem"} onClick = {() => handleToggle("taxis")}>
             <FontAwesomeIcon icon={faTaxi} />
             <span>Airport taxis</span>
           </div>
