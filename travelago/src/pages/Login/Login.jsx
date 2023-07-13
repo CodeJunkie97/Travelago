@@ -3,6 +3,9 @@ import axios from "axios";
 import {useState, useContext} from "react";
 import {useNavigate} from "react-router-dom";
 import {AuthContext} from "../../context/AuthContext";
+import Navbar from "../../components/Navbar/Navbar";
+import {Link} from "react-router-dom";
+
 
 const Login = () => {
   const [credentials, setCredentials] = useState({
@@ -32,6 +35,8 @@ const Login = () => {
 
 
   return (
+  <div>
+    <Navbar />
     <div className="login">
       <div className="lContainer">
         <input
@@ -53,6 +58,22 @@ const Login = () => {
         </button>
         {error && <span>{error.message}</span>}
       </div>
+    </div>
+    <div className = "footContainer">
+    <div>
+    <hr />
+    <p className="p1">
+          By signing in or creating an account, you agree with our{" "}
+          <span style={{ color: "blue" }}>Terms & Conditions</span> and{" "}
+          <span style={{ color: "blue" }}>Privacy Statement</span>
+    </p>
+    <hr />
+    </div>
+    <div className="footContainer">
+        <p className="p1"> All rights reserved.</p>
+        <p className="p1">Copyright (2006-2021) – Travelago.com™</p>
+    </div>
+    </div>
     </div>
   );
   };

@@ -1,5 +1,5 @@
 .login {
-    height: 100vh;
+    height: 300px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -29,4 +29,13 @@
   .lButton:disabled{
     background-color: #0071c28c;
     cursor: not-allowed;
+  }
+  .p1{
+    font-size: 13px;
+    padding: 0;
+    margin: 0;
+  }
+  .footContainer{
+    width: 400px;
+    margin: auto;
   }
