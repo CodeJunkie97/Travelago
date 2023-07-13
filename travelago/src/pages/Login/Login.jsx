@@ -46,6 +46,7 @@ const Login = () => {
           onChange={handleChange}
           className="lInput"
         />
+       
         <input
           type="password"
           placeholder="password"
@@ -53,6 +54,7 @@ const Login = () => {
           onChange={handleChange}
           className="lInput"
         />
+      
         <button disabled={loading} onClick={handleClick} className="lButton">
           Login
         </button>
