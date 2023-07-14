@@ -17,7 +17,7 @@ import {useNavigate} from "react-router-dom";
 import { SearchContext } from "../../context/SearchContext";
 import { AuthContext } from "../../context/AuthContext";
 
-const Header = ({ type }) => {
+const Header = ({ type, page}) => {
   const [destination, setDestination] = useState("");
   const [openDate, setOpenDate] = useState(false);
   const [activeTab, setActiveTab] = useState("stays");
@@ -88,6 +88,7 @@ const handleToggle = (tab) =>{
         </div>
         {type !== "list" && (
           <>
+          {page==="stays" && (<div>
             <h1 className="headerTitle">
               A lifetime of discounts? It's Genius.
             </h1>
@@ -95,6 +96,7 @@ const handleToggle = (tab) =>{
               Get rewarded for your travels – unlock instant savings of 10% or
               more with a free Travelago Booking account
             </p>
+            
             {!user && <button className="headerBtn">Sign in / Register</button>}
             <div className="headerSearch">
               <div className="headerSearchItem">
@@ -206,6 +208,36 @@ const handleToggle = (tab) =>{
                 </button>
               </div>
             </div>
+            </div>)}
+          
+          {page==="flights" && (<div>
+            <h1 className="headerTitle">
+              Compare and book flights with ease
+            </h1>
+            <p className="headerDesc">
+            Discover your next dream destination
+            </p>
+            <div className="radio">
+            <input
+              type="radio"
+              name="Round-Trip"
+              value="Round-Trip"
+              className="round"
+            /> Round-Trip
+            <input
+              type="radio"
+              name="One-Way"
+              value="One-Way"
+              className="one"
+            />One-Way
+            <input
+              type="radio"
+              name="Multi-City"
+              value="Multi-City"
+              className="round"
+            />Multi-City
+            </div>
+          </div>)}
           </>
         )}
       </div>

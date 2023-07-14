@@ -126,3 +126,6 @@
   .optionCounterButton:disabled {
     cursor: not-allowed;
   }
+  .round{
+    color:white;
+  }
